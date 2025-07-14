@@ -1,3 +1,0 @@
-2025-07-05 22:45:31 - api_ecosystem - INFO - 从配置文件加载LLM接口: ../config3.json
-2025-07-05 22:45:31 - api_ecosystem - ERROR - 加载LLM配置失败: LLMInterface.from_config_file() got an unexpected keyword argument 'mock'
-2025-07-05 22:45:31 - api_ecosystem - INFO - 切换到模拟模式

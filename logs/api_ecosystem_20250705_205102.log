@@ -1,2 +1,0 @@
-2025-07-05 20:51:02 - api_ecosystem - INFO - 启动环境Agent测试模式
-2025-07-05 20:51:02 - api_ecosystem - WARNING - 未提供API密钥，请设置环境变量OPENAI_API_KEY或在初始化时提供

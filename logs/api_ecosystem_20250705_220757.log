@@ -1,7 +1,0 @@
-2025-07-05 22:07:57 - api_ecosystem - INFO - 开始测试社会Agent
-2025-07-05 22:07:57 - api_ecosystem - WARNING - 未提供API密钥，请设置环境变量OPENAI_API_KEY或在初始化时提供
-2025-07-05 22:07:57 - api_ecosystem - WARNING - 未提供API密钥，使用模拟模式
-2025-07-05 22:07:57 - api_ecosystem - INFO - LLM接口初始化完成，模型: gpt-3.5-turbo，模拟模式: True
-2025-07-05 22:07:57 - api_ecosystem - INFO - [社会Agent] 社会Agent初始化完成
-2025-07-05 22:07:57 - api_ecosystem - INFO - [社会Agent] API关系数据加载完成，包含22649个API
-2025-07-05 22:07:57 - api_ecosystem - ERROR - 社会Agent测试失败: 数据加载失败

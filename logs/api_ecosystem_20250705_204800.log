@@ -1,9 +1,0 @@
-2025-07-05 20:48:00 - api_ecosystem - INFO - 启动测试模式
-2025-07-05 20:48:00 - api_ecosystem - WARNING - 未提供API密钥，请设置环境变量OPENAI_API_KEY或在初始化时提供
-2025-07-05 20:48:00 - api_ecosystem - WARNING - 未提供API密钥，请设置环境变量OPENAI_API_KEY或在初始化时提供
-2025-07-05 20:48:00 - api_ecosystem - ERROR - LLM接口测试失败: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
-2025-07-05 20:48:00 - api_ecosystem - ERROR - LLM接口测试失败: The api_key client option must be set either by passing api_key to the client or by setting the OPENAI_API_KEY environment variable
-2025-07-05 20:48:00 - api_ecosystem - INFO - 实验配置: {'random_seed': 42, 'num_scenarios': 100, 'time_periods': 17, 'api_categories': ['基础设施类', '生活服务类', '企业管理类', '社交娱乐类']}
-2025-07-05 20:48:00 - api_ecosystem - INFO - 实验配置: {'random_seed': 42, 'num_scenarios': 100, 'time_periods': 17, 'api_categories': ['基础设施类', '生活服务类', '企业管理类', '社交娱乐类']}
-2025-07-05 20:48:00 - api_ecosystem - INFO - 测试模式完成
-2025-07-05 20:48:00 - api_ecosystem - INFO - 测试模式完成

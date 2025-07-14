@@ -34,6 +34,8 @@ from utils.visualization import (
     plot_multi_charts,
     plot_scenario_comparison
 )
+from utils.network_visualization import plot_network_metrics_comparison
+
 from utils.radar_visualizer import RadarVisualizer
 from utils.network_visualizer import NetworkVisualizer
 
@@ -904,7 +906,7 @@ def network_vis_mode(args, auto_open=True):
 
     try:
         # 导入网络可视化模块
-        from utils.network_visualizer import load_network_data, plot_network_metrics_comparison
+        from utils.network_visualizer import load_network_data
         from utils.network_visualization import plot_network_comparison
         # 设置默认输出目录
         output_dir = args.output_dir
@@ -1291,7 +1293,7 @@ def run_visualization(args):
     logger.info("开始运行可视化模式")
 
     # 设置输出目录
-    output_dir = args.output_dir or os.path.join(os.path.dirname(__file__), '../output/visualization')
+    output_dir = args.output_dir or os.path.join(os.path.dirname(__file__), 'output/visualization')
     os.makedirs(output_dir, exist_ok=True)
 
     # 可视化情景数据

@@ -397,8 +397,8 @@ if __name__ == "__main__":
     loader = DataLoader(logger=logger)
     
     # 设置SQL文件路径
-    api_sql_file = "../programmableweb_2022(1).sql"
-    dataset_sql_file = "../programmableweb_dataset(1).sql"
+    api_sql_file = "../programmableweb_2022.sql"
+    dataset_sql_file = "../programmableweb_dataset.sql"
     
     # 加载数据
     success = loader.load_from_sql(api_sql_file, dataset_sql_file)
