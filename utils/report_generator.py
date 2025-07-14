@@ -1,6 +1,7 @@
 """
 API服务生态系统情景生成 - HTML报告生成工具
 生成包含可视化结果的HTML报告
+scenarios_comparison.png 由之前的 radar_comparison.png 相关代码生成
 """
 
 import os

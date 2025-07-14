@@ -126,7 +126,7 @@ def plot_environment_boundaries(
                 x,
                 [lower] * len(x),
                 [upper] * len(x),
-                color=color,
+                color=color, # 填充颜色（与API类别对应）
                 alpha=0.15
             )
             

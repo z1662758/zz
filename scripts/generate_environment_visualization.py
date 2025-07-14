@@ -48,6 +48,8 @@ def parse_args():
     return parser.parse_args()
 
 
+def plot_from_files(scenario_file, historical_data_file, output_path, title, figsize, dpi):
+    pass
 def main():
     """主函数"""
     args = parse_args()
@@ -100,7 +102,7 @@ def main():
     
     # 绘制图表
     logger.info(f"绘制环境边界图表: {args.output_file}")
-    output_path = plot_environment_boundaries_from_files(
+    output_path = plot_from_files(
         scenario_file=args.scenario_file,
         historical_data_file=args.historical_data_file,
         output_path=args.output_file,
