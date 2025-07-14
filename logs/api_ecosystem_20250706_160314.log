@@ -1,0 +1,17 @@
+2025-07-06 16:03:14 - api_ecosystem - INFO - 启动网络可视化模式
+2025-07-06 16:03:14 - api_ecosystem - INFO - 生成网络数据: ../output/network_vis\network_data.json
+2025-07-06 16:03:14 - api_ecosystem - INFO - 绘制网络可视化图表: API关系骨架计算实验设计框架
+2025-07-06 16:03:15 - api_ecosystem - ERROR - 网络可视化失败: object of type 'int' has no len()
+2025-07-06 16:03:15 - api_ecosystem - ERROR - Traceback (most recent call last):
+  File "E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\main.py", line 939, in network_vis_mode
+    vis_output = plot_network_visualization(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\utils\network_visualizer.py", line 319, in plot_network_visualization
+    for i in range(min(5, max(len(communities) for communities in
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\utils\network_visualizer.py", line 319, in <genexpr>
+    for i in range(min(5, max(len(communities) for communities in
+                             ^^^^^^^^^^^^^^^^
+TypeError: object of type 'int' has no len()
+
+2025-07-06 16:03:15 - api_ecosystem - INFO - 网络可视化模式完成

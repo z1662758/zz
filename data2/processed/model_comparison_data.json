@@ -1,0 +1,96 @@
+{
+    "title": "大模型规模对比实验数据",
+    "description": "比较不同规模大模型在API生态系统情景生成中的表现差异",
+    "models": {
+        "small": {
+            "name": "小规模模型",
+            "parameters": "1B-10B",
+            "description": "参数量在1B到10B之间的小规模语言模型",
+            "metrics": {
+                "accuracy": 0.72,
+                "coverage": 0.65,
+                "efficiency": 0.88,
+                "hallucination_rate": 0.25,
+                "coherence": 0.70
+            },
+            "boundaries": {
+                "Social": {
+                    "upper": 1100,
+                    "lower": 900
+                },
+                "Enterprise": {
+                    "upper": 2200,
+                    "lower": 1800
+                },
+                "Tools": {
+                    "upper": 600,
+                    "lower": 400
+                },
+                "Financial": {
+                    "upper": 3000,
+                    "lower": 2500
+                }
+            }
+        },
+        "medium": {
+            "name": "中等规模模型",
+            "parameters": "10B-100B",
+            "description": "参数量在10B到100B之间的中等规模语言模型",
+            "metrics": {
+                "accuracy": 0.83,
+                "coverage": 0.78,
+                "efficiency": 0.75,
+                "hallucination_rate": 0.15,
+                "coherence": 0.82
+            },
+            "boundaries": {
+                "Social": {
+                    "upper": 1300,
+                    "lower": 800
+                },
+                "Enterprise": {
+                    "upper": 2800,
+                    "lower": 1600
+                },
+                "Tools": {
+                    "upper": 700,
+                    "lower": 350
+                },
+                "Financial": {
+                    "upper": 3800,
+                    "lower": 2200
+                }
+            }
+        },
+        "large": {
+            "name": "大规模模型",
+            "parameters": "100B+",
+            "description": "参数量在100B以上的大规模语言模型",
+            "metrics": {
+                "accuracy": 0.91,
+                "coverage": 0.88,
+                "efficiency": 0.68,
+                "hallucination_rate": 0.08,
+                "coherence": 0.93
+            },
+            "boundaries": {
+                "Social": {
+                    "upper": 1500,
+                    "lower": 700
+                },
+                "Enterprise": {
+                    "upper": 3200,
+                    "lower": 1400
+                },
+                "Tools": {
+                    "upper": 800,
+                    "lower": 300
+                },
+                "Financial": {
+                    "upper": 4200,
+                    "lower": 2000
+                }
+            }
+        }
+    }
+}

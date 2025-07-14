@@ -1,0 +1,52 @@
+2025-07-06 14:33:30 - api_ecosystem - WARNING - 未提供LLM配置文件，使用默认配置
+2025-07-06 14:33:30 - api_ecosystem - WARNING - 未提供API密钥，请设置环境变量OPENAI_API_KEY或在初始化时提供
+2025-07-06 14:33:30 - api_ecosystem - WARNING - 未提供API密钥，使用模拟模式
+2025-07-06 14:33:30 - api_ecosystem - INFO - LLM接口初始化完成，模型: gpt-3.5-turbo，模拟模式: True
+2025-07-06 14:33:30 - api_ecosystem - INFO - 开始测试模式
+2025-07-06 14:33:30 - api_ecosystem - INFO - 开始测试环境Agent
+2025-07-06 14:33:30 - api_ecosystem - INFO - [环境Agent] 环境Agent初始化完成
+2025-07-06 14:33:30 - api_ecosystem - INFO - [环境Agent] 开始生成极端情景
+2025-07-06 14:33:30 - api_ecosystem - INFO - 使用模拟响应进行测试
+2025-07-06 14:33:30 - api_ecosystem - INFO - [环境Agent] 开始行动，计算环境分布的上下限边界
+2025-07-06 14:33:30 - api_ecosystem - INFO - 生成的极端情景: Global Data Privacy Regulation Explosion
+2025-07-06 14:33:30 - api_ecosystem - INFO - 需求变化: {'Infrastructure': -23.3671, 'Life Services': 39.5467, 'Business Management': 20.8751, 'Social Entertainment': -10.726}
+2025-07-06 14:33:30 - api_ecosystem - INFO - 概率: 0.15
+2025-07-06 14:33:30 - api_ecosystem - INFO - 持续时间: 24个月
+2025-07-06 14:33:30 - api_ecosystem - INFO - 长期影响: This crisis will reshape the API service market landscape. In the long term, it will foster a batch of API service providers with 'privacy first' as their core competitiveness, and data minimization principles will become the standard for API design.
+2025-07-06 14:33:30 - api_ecosystem - ERROR - 极端情景可视化失败: 'Axes' object has no attribute 'set_thetagrids'
+2025-07-06 14:33:30 - api_ecosystem - INFO - 已生成简单可视化: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\test_env_agent\visualize\simple_visualization.png
+2025-07-06 14:33:30 - api_ecosystem - INFO - 测试结果已保存到: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\test_env_agent
+2025-07-06 14:33:30 - api_ecosystem - INFO - 开始测试社会Agent
+2025-07-06 14:33:30 - api_ecosystem - WARNING - 未提供API密钥，请设置环境变量OPENAI_API_KEY或在初始化时提供
+2025-07-06 14:33:30 - api_ecosystem - WARNING - 未提供API密钥，使用模拟模式
+2025-07-06 14:33:30 - api_ecosystem - INFO - LLM接口初始化完成，模型: gpt-3.5-turbo，模拟模式: True
+2025-07-06 14:33:30 - api_ecosystem - INFO - [社会Agent] 社会Agent初始化完成
+2025-07-06 14:33:30 - api_ecosystem - INFO - [社会Agent] API数据加载完成，包含22649个API
+2025-07-06 14:33:34 - api_ecosystem - INFO - [社会Agent] 关系数据加载完成，包含0个调用关系和3377691个相似性关系
+2025-07-06 14:33:34 - api_ecosystem - INFO - [社会Agent] API数量(22649)超过最大节点数(5000)，进行随机采样
+2025-07-06 14:33:34 - api_ecosystem - INFO - [社会Agent] 相似性关系数量(3377691)超过剩余边数限制(50000)，根据权重排序
+2025-07-06 14:33:36 - api_ecosystem - INFO - [社会Agent] 成功构建协作网络，包含5000个节点和2416条边
+2025-07-06 14:33:36 - api_ecosystem - INFO - [社会Agent] 开始使用Louvain算法进行社区检测
+2025-07-06 14:33:36 - api_ecosystem - INFO - [社会Agent] 成功检测到10个社区
+2025-07-06 14:33:36 - api_ecosystem - INFO - [社会Agent] 开始识别关键节点
+2025-07-06 14:33:36 - api_ecosystem - INFO - [社会Agent] 计算度中心性
+2025-07-06 14:33:36 - api_ecosystem - INFO - [社会Agent] 计算介数中心性（使用近似算法）
+2025-07-06 14:33:43 - api_ecosystem - INFO - [社会Agent] 计算接近中心性
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 计算特征向量中心性
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 计算综合评分
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 成功识别10个关键节点
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 开始分析跨社区连接
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 成功分析2个跨社区连接
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 开始提取骨干网络
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 成功提取骨干网络，包含5000个节点和64条边
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 开始保存分析结果到目录: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\test_social_agent
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 成功保存分析结果到目录: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\test_social_agent
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 开始可视化网络
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 网络节点数(5000)过多，只可视化关键节点和它们的邻居
+2025-07-06 14:33:44 - api_ecosystem - INFO - [社会Agent] 成功可视化网络并保存到: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\test_social_agent\network_visualization.png
+2025-07-06 14:33:44 - api_ecosystem - INFO - 社会Agent测试成功
+2025-07-06 14:33:44 - api_ecosystem - INFO - 检测到的社区数量: 10
+2025-07-06 14:33:44 - api_ecosystem - INFO - 识别的关键节点数量: 10
+2025-07-06 14:33:44 - api_ecosystem - INFO - 分析的跨社区连接数量: 2
+2025-07-06 14:33:44 - api_ecosystem - INFO - 结果已保存到: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\test_social_agent
+2025-07-06 14:33:47 - api_ecosystem - INFO - 测试模式完成

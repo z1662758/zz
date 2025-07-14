@@ -1,0 +1,16 @@
+2025-07-06 14:17:06 - api_ecosystem - WARNING - 未提供LLM配置文件，使用默认配置
+2025-07-06 14:17:06 - api_ecosystem - WARNING - 未提供API密钥，请设置环境变量OPENAI_API_KEY或在初始化时提供
+2025-07-06 14:17:06 - api_ecosystem - WARNING - 未提供API密钥，使用模拟模式
+2025-07-06 14:17:06 - api_ecosystem - INFO - LLM接口初始化完成，模型: gpt-3.5-turbo，模拟模式: True
+2025-07-06 14:17:06 - api_ecosystem - INFO - 开始测试环境Agent
+2025-07-06 14:17:06 - api_ecosystem - INFO - [环境Agent] 环境Agent初始化完成
+2025-07-06 14:17:06 - api_ecosystem - INFO - [环境Agent] 开始生成极端情景
+2025-07-06 14:17:06 - api_ecosystem - INFO - 使用模拟响应进行测试
+2025-07-06 14:17:06 - api_ecosystem - INFO - [环境Agent] 开始行动，计算环境分布的上下限边界
+2025-07-06 14:17:06 - api_ecosystem - INFO - 生成的极端情景: 全球数据隐私监管大爆发
+2025-07-06 14:17:06 - api_ecosystem - INFO - 需求变化: {'Infrastructure': -23.3671, 'Life Services': 39.5467, 'Business Management': 20.8751, 'Social Entertainment': -10.726}
+2025-07-06 14:17:06 - api_ecosystem - INFO - 概率: 0.15
+2025-07-06 14:17:06 - api_ecosystem - INFO - 持续时间: 24个月
+2025-07-06 14:17:06 - api_ecosystem - INFO - 长期影响: 这场危机将重塑API服务市场格局。长期来看，将催生一批以'隐私优先'为核心竞争力的API服务提供商，数据最小化原则将成为API设计的标准。
+2025-07-06 14:17:07 - api_ecosystem - ERROR - 极端情景可视化失败: 'Axes' object has no attribute 'set_thetagrids'
+2025-07-06 14:17:07 - api_ecosystem - INFO - 测试结果已保存到: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\test_env_agent

@@ -1,0 +1,37 @@
+2025-07-06 15:01:51 - api_ecosystem - INFO - 启动规划Agent测试模式
+2025-07-06 15:01:51 - api_ecosystem - INFO - 使用配置文件: ../config3.json
+2025-07-06 15:01:51 - api_ecosystem - INFO - 从配置文件 ../config3.json 加载配置
+2025-07-06 15:01:51 - api_ecosystem - INFO - 从配置文件加载了API密钥和LLM配置，使用模型: qwen2.5-72b-instruct
+2025-07-06 15:01:51 - api_ecosystem - INFO - 使用自定义API基础URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+2025-07-06 15:01:51 - api_ecosystem - INFO - OpenAI客户端初始化成功
+2025-07-06 15:01:51 - api_ecosystem - INFO - LLM接口初始化完成，模型: qwen2.5-72b-instruct，模拟模式: False
+2025-07-06 15:01:51 - api_ecosystem - INFO - LLM接口初始化成功: LLMInterface(model=qwen2.5-72b-instruct, temperature=0.7, mock_mode=False)
+2025-07-06 15:01:51 - api_ecosystem - INFO - [规划Agent] 规划Agent初始化完成
+2025-07-06 15:01:51 - api_ecosystem - INFO - 规划Agent创建成功: 规划Agent - 负责生成API服务市场实验规则和优化实验方案
+2025-07-06 15:01:51 - api_ecosystem - INFO - [环境Agent] 环境Agent初始化完成
+2025-07-06 15:01:51 - api_ecosystem - INFO - [环境Agent] 开始生成极端情景
+2025-07-06 15:01:51 - api_ecosystem - INFO - [环境Agent] 开始思考，生成极端情景
+2025-07-06 15:02:10 - api_ecosystem - INFO - [环境Agent] 生成极端情景: 未命名情景
+2025-07-06 15:02:10 - api_ecosystem - INFO - [环境Agent] 开始行动，计算环境分布的上下限边界
+2025-07-06 15:02:10 - api_ecosystem - INFO - [规划Agent] 环境边界设置完成
+2025-07-06 15:02:10 - api_ecosystem - INFO - [规划Agent] 社会关系网络设置完成
+2025-07-06 15:02:10 - api_ecosystem - INFO - 生成约束条件
+2025-07-06 15:02:10 - api_ecosystem - INFO - [规划Agent] 开始思考，执行规划任务
+2025-07-06 15:02:10 - api_ecosystem - INFO - [规划Agent] 开始生成约束条件
+2025-07-06 15:02:42 - api_ecosystem - INFO - [规划Agent] 生成了17个约束条件
+2025-07-06 15:02:42 - api_ecosystem - INFO - 生成了17个约束条件
+2025-07-06 15:02:42 - api_ecosystem - INFO - 编译第一个约束条件
+2025-07-06 15:02:42 - api_ecosystem - INFO - [规划Agent] 开始思考，执行规划任务
+2025-07-06 15:02:42 - api_ecosystem - INFO - [规划Agent] 开始编译约束条件: 1
+2025-07-06 15:02:52 - api_ecosystem - INFO - [规划Agent] 编译了逻辑表达式: ### 表达式
+对于任意时间点t，基础设施类API的每分钟调用次数（api_calls_per_minute[t]）不得超过1000次。
+
+### Python代码
+2025-07-06 15:02:52 - api_ecosystem - INFO - 生成的约束条件数量: 17
+2025-07-06 15:02:52 - api_ecosystem - INFO - 示例约束条件: 基础设施类API的每分钟调用次数不得超过1000次，以防止滥用和保护系统稳定性。
+2025-07-06 15:02:52 - api_ecosystem - INFO - 编译后的表达式: ### 表达式
+对于任意时间点t，基础设施类API的每分钟调用次数（api_calls_per_minute[t]）不得超过1000次。
+
+### Python代码
+2025-07-06 15:02:52 - api_ecosystem - INFO - 测试结果已保存到: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\test_planner_agent
+2025-07-06 15:02:52 - api_ecosystem - INFO - 规划Agent测试模式完成

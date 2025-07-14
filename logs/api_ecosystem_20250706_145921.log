@@ -1,0 +1,10 @@
+2025-07-06 14:59:21 - api_ecosystem - INFO - 启动规划Agent测试模式
+2025-07-06 14:59:21 - api_ecosystem - INFO - 使用配置文件: ../config3.json
+2025-07-06 14:59:21 - api_ecosystem - ERROR - 规划Agent测试失败: LLMInterface.from_config_file() got an unexpected keyword argument 'mock_mode'
+2025-07-06 14:59:21 - api_ecosystem - ERROR - Traceback (most recent call last):
+  File "E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\main.py", line 272, in test_planner_agent
+    llm = LLMInterface.from_config_file(args.llm_config, logger=logger, mock_mode=args.mock)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: LLMInterface.from_config_file() got an unexpected keyword argument 'mock_mode'
+
+2025-07-06 14:59:21 - api_ecosystem - INFO - 规划Agent测试模式完成

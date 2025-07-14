@@ -1,0 +1,7 @@
+2025-07-05 22:48:11 - api_ecosystem - INFO - 从配置文件加载LLM接口: ../config3.json
+2025-07-05 22:48:11 - api_ecosystem - WARNING - 未提供API密钥，请设置环境变量OPENAI_API_KEY或在初始化时提供
+2025-07-05 22:48:11 - api_ecosystem - WARNING - 未提供API密钥，使用模拟模式
+2025-07-05 22:48:11 - api_ecosystem - INFO - LLM接口初始化完成，模型: gpt-3.5-turbo，模拟模式: True
+2025-07-05 22:48:11 - api_ecosystem - INFO - 开始运行API服务生态系统情景生成
+2025-07-05 22:48:11 - api_ecosystem - INFO - 步骤1: 生成极端情景
+2025-07-05 22:48:11 - api_ecosystem - INFO - [环境Agent] 环境Agent初始化完成

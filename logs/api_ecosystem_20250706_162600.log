@@ -1,0 +1,38 @@
+2025-07-06 16:26:00 - api_ecosystem - INFO - 启动雷达图可视化模式
+2025-07-06 16:26:00 - api_ecosystem - INFO - 生成雷达图数据: ../output/radar_vis\radar_data.json
+2025-07-06 16:26:00 - api_ecosystem - INFO - 绘制雷达图: 多维情景向量对比
+2025-07-06 16:26:00 - api_ecosystem - ERROR - 雷达图可视化失败: 'polar'
+2025-07-06 16:26:00 - api_ecosystem - ERROR - Traceback (most recent call last):
+  File "E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\main.py", line 1081, in radar_vis_mode
+    radar_output = plot_radar_comparison(
+                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\utils\radar_visualizer.py", line 208, in plot_radar_comparison
+    fig, axes = plt.subplots(figsize=figsize, nrows=2, ncols=2,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\miniconda3\Lib\site-packages\matplotlib\pyplot.py", line 1770, in subplots
+    axs = fig.subplots(nrows=nrows, ncols=ncols, sharex=sharex, sharey=sharey,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\miniconda3\Lib\site-packages\matplotlib\figure.py", line 919, in subplots
+    axs = gs.subplots(sharex=sharex, sharey=sharey, squeeze=squeeze,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\miniconda3\Lib\site-packages\matplotlib\gridspec.py", line 283, in subplots
+    axarr[row, col] = figure.add_subplot(
+                      ^^^^^^^^^^^^^^^^^^^
+  File "E:\miniconda3\Lib\site-packages\matplotlib\figure.py", line 768, in add_subplot
+    ax = projection_class(self, *args, **pkw)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\utils\radar_visualizer.py", line 45, in __init__
+    super().__init__(*args, **kwargs)
+  File "E:\miniconda3\Lib\site-packages\matplotlib\projections\polar.py", line 827, in __init__
+    super().__init__(*args, **kwargs)
+  File "E:\miniconda3\Lib\site-packages\matplotlib\axes\_base.py", line 718, in __init__
+    self._init_axis()
+  File "E:\miniconda3\Lib\site-packages\matplotlib\projections\polar.py", line 859, in _init_axis
+    self.spines['polar'].register_axis(self.yaxis)
+    ~~~~~~~~~~~^^^^^^^^^
+  File "E:\miniconda3\Lib\site-packages\matplotlib\spines.py", line 582, in __getitem__
+    return self._dict[key]
+           ~~~~~~~~~~^^^^^
+KeyError: 'polar'
+
+2025-07-06 16:26:00 - api_ecosystem - INFO - 雷达图可视化模式完成

@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多智能体工作流程可视化</title>
+    <!-- 引入一些图标库 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind配置 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        secondary: '#36D399',
+                        warning: '#FFAB00',
+                        danger: '#F87272',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .agent-card {
+                @apply bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl;
+            }
+            .process-line {
+                @apply h-1 bg-primary/50 rounded-full;
+            }
+            .process-arrow {
+                @apply w-6 h-6 border-t-2 border-r-2 border-primary/50 transform rotate-45 -mt-3;
+            }
+            .thinking-step {
+                @apply bg-light rounded-lg p-4 my-3 border-l-4 border-primary/50;
+            }
+            .metric-card {
+                @apply bg-white rounded-lg p-4 shadow-sm border border-gray-100;
+            }
+            .timeline-item {
+                @apply relative pl-8 pb-8;
+            }
+            .timeline-dot {
+                @apply absolute left-0 top-0 w-4 h-4 rounded-full bg-primary;
+            }
+            .timeline-line {
+                @apply absolute left-2 top-4 h-full w-0.5 bg-primary/30;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-inter text-dark">
+    <div class="container mx-auto px-4 py-8">
+        <!-- 标题区域 -->
+        <header class="text-center mb-12">
+            <h1 class="text-[clamp(2rem,5vw,3rem)] font-bold text-primary mb-4">多智能体协作流程可视化</h1>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto">基于ProgrammableWeb和RapidAPI数据集的API生态系统模拟</p>
+        </header>
+
+        <!-- 工作流程可视化 -->
+        <section class="mb-16">
+            <h2 class="text-xl font-semibold mb-6 flex items-center">
+                <i class="fa fa-sitemap text-primary mr-2"></i> 智能体协作流程
+            </h2>
+
+            <div class="relative">
+                <!-- 主流程线 -->
+                <div class="process-line absolute top-1/2 left-0 right-0 -translate-y-1/2 z-0"></div>
+
+                <!-- 流程步骤 -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+                    <!-- Planner Agent -->
+                    <div class="agent-card border-t-4 border-primary">
+                        <div class="flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4 mx-auto">
+                            <i class="fa fa-cogs text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-center mb-2">规划智能体</h3>
+                        <p class="text-gray-600 text-center mb-4">基于用户需求生成实验规则</p>
+
+                        <div class="thinking-step">
+                            <p class="font-medium text-primary">思考过程：</p>
+                            <ul class="text-sm text-gray-700 space-y-1 mt-2">
+                                <li>• 解析用户需求核心目标</li>
+                                <li>• 提取API市场数据特征</li>
+                                <li>• 设计极端情景参数范围</li>
+                                <li>• 制定社会网络构建规则</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-4 grid grid-cols-2 gap-2">
+                            <div class="metric-card">
+                                <p class="text-xs text-gray-500">处理信息量</p>
+                                <p class="text-lg font-semibold">5000+ API记录</p>
+                            </div>
+                            <div class="metric-card">
+                                <p class="text-xs text-gray-500">响应时间</p>
+                                <p class="text-lg font-semibold">12-18秒</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 流程箭头 -->
+                    <div class="hidden md:flex items-center justify-center">
+                        <div class="process-arrow"></div>
+                    </div>
+
+                    <!-- Environment Agent -->
+                    <div class="agent-card border-t-4 border-secondary">
+                        <div class="flex items-center justify-center w-16 h-16 bg-secondary/10 rounded-full mb-4 mx-auto">
+                            <i class="fa fa-globe text-secondary text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-center mb-2">环境智能体</h3>
+                        <p class="text-gray-600 text-center mb-4">生成极端情景参数</p>
+
+                        <div class="thinking-step">
+                            <p class="font-medium text-secondary">思考过程：</p>
+                            <ul class="text-sm text-gray-700 space-y-1 mt-2">
+                                <li>• 计算历史数据分布边界</li>
+                                <li>• 应用对抗语义建模</li>
+                                <li>• 生成符合长尾分布的参数</li>
+                                <li>• 关联历史参考事件</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-4 grid grid-cols-2 gap-2">
+                            <div class="metric-card">
+                                <p class="text-xs text-gray-500">情景参数</p>
+                                <p class="text-lg font-semibold">3组极端情景</p>
+                            </div>
+                            <div class="metric-card">
+                                <p class="text-xs text-gray-500">可信度</p>
+                                <p class="text-lg font-semibold">85-92%</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 流程箭头 -->
+                    <div class="hidden md:flex items-center justify-center">
+                        <div class="process-arrow"></div>
+                    </div>
+
+                    <!-- Social Agent -->
+                    <div class="agent-card border-t-4 border-warning">
+                        <div class="flex items-center justify-center w-16 h-16 bg-warning/10 rounded-full mb-4 mx-auto">
+                            <i class="fa fa-users text-warning text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-center mb-2">社会关系智能体</h3>
+                        <p class="text-gray-600 text-center mb-4">构建API协作网络</p>
+
+                        <div class="thinking-step">
+                            <p class="font-medium text-warning">思考过程：</p>
+                            <ul class="text-sm text-gray-700 space-y-1 mt-2">
+                                <li>• 分析API类别关联性</li>
+                                <li>• 计算调用频率相似度</li>
+                                <li>• 构建共现矩阵</li>
+                                <li>• 生成协同网络拓扑</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-4 grid grid-cols-2 gap-2">
+                            <div class="metric-card">
+                                <p class="text-xs text-gray-500">网络节点</p>
+                                <p class="text-lg font-semibold">50+ API节点</p>
+                            </div>
+                            <div class="metric-card">
+                                <p class="text-xs text-gray-500">平均度</p>
+                                <p class="text-lg font-semibold">2.5</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 流程箭头 -->
+                    <div class="hidden md:flex items-center justify-center">
+                        <div class="process-arrow"></div>
+                    </div>
+
+                    <!-- Validation Agent -->
+                    <div class="agent-card border-t-4 border-danger">
+                        <div class="flex items-center justify-center w-16 h-16 bg-danger/10 rounded-full mb-4 mx-auto">
+                            <i class="fa fa-check-circle text-danger text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-center mb-2">验证智能体</h3>
+                        <p class="text-gray-600 text-center mb-4">验证结果可靠性</p>
+
+                        <div class="thinking-step">
+                            <p class="font-medium text-danger">思考过程：</p>
+                            <ul class="text-sm text-gray-700 space-y-1 mt-2">
+                                <li>• 检查逻辑一致性</li>
+                                <li>• 计算数据吻合度</li>
+                                <li>• 验证语义真实性</li>
+                                <li>• 提供优化建议</li>
+                            </ul>
+                        </div>
+
+                        <div class="mt-4 grid grid-cols-2 gap-2">
+                            <div class="metric-card">
+                                <p class="text-xs text-gray-500">验证通过率</p>
+                                <p class="text-lg font-semibold">92%</p>
+                            </div>
+                            <div class="metric-card">
+                                <p class="text-xs text-gray-500">优化建议</p>
+                                <p class="text-lg font-semibold">3条</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 详细步骤拆解图 -->
+        <section class="mb-16">
+            <h2 class="text-xl font-semibold mb-6 flex items-center">
+                <i class="fa fa-tasks text-primary mr-2"></i> 详细步骤拆解
+            </h2>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <!-- 左侧步骤列表 -->
+                    <div class="md:w-1/3">
+                        <h3 class="text-lg font-semibold mb-4">流程步骤</h3>
+                        <div class="space-y-4">
+                            <button class="step-btn w-full text-left px-4 py-3 rounded-lg bg-primary/10 text-primary font-medium transition-all hover:bg-primary/20" data-step="1">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center mr-3">1</div>
+                                    <div>
+                                        <div class="font-medium">用户需求输入</div>
+                                        <div class="text-sm text-gray-600">自然语言描述API生态模拟目标</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="step-btn w-full text-left px-4 py-3 rounded-lg bg-gray-100 text-gray-700 font-medium transition-all hover:bg-gray-200" data-step="2">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center mr-3">2</div>
+                                    <div>
+                                        <div class="font-medium">规划智能体处理</div>
+                                        <div class="text-sm text-gray-600">生成实验规则与参数范围</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="step-btn w-full text-left px-4 py-3 rounded-lg bg-gray-100 text-gray-700 font-medium transition-all hover:bg-gray-200" data-step="3">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center mr-3">3</div>
+                                    <div>
+                                        <div class="font-medium">环境智能体处理</div>
+                                        <div class="text-sm text-gray-600">生成极端情景参数</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="step-btn w-full text-left px-4 py-3 rounded-lg bg-gray-100 text-gray-700 font-medium transition-all hover:bg-gray-200" data-step="4">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center mr-3">4</div>
+                                    <div>
+                                        <div class="font-medium">社会关系智能体处理</div>
+                                        <div class="text-sm text-gray-600">构建API协作网络</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="step-btn w-full text-left px-4 py-3 rounded-lg bg-gray-100 text-gray-700 font-medium transition-all hover:bg-gray-200" data-step="5">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center mr-3">5</div>
+                                    <div>
+                                        <div class="font-medium">验证智能体处理</div>
+                                        <div class="text-sm text-gray-600">验证结果可靠性</div>
+                                    </div>
+                                </div>
+                            </button>
+
+                            <button class="step-btn w-full text-left px-4 py-3 rounded-lg bg-gray-100 text-gray-700 font-medium transition-all hover:bg-gray-200" data-step="6">
+                                <div class="flex items-center">
+                                    <div class="w-8 h-8 rounded-full bg-gray-300 text-white flex items-center justify-center mr-3">6</div>
+                                    <div>
+                                        <div class="font-medium">方案优化与反馈</div>
+                                        <div class="text-sm text-gray-600">迭代优化实验参数</div>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 右侧步骤详情 -->
+                    <div class="md:w-2/3 step-details" id="step-1-details">
+                        <h3 class="text-lg font-semibold mb-4">步骤 1: 用户需求输入</h3>
+
+                        <div class="bg-light rounded-lg p-4 mb-4">
+                            <p class="font-medium mb-2">用户需求示例:</p>
+                            <p class="text-gray-700">"模拟2025年第三季度API市场政策突变的极端情景，分析企业协作网络的响应能力"</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <p class="font-medium mb-2">处理流程:</p>
+                            <ul class="list-disc list-inside text-gray-700 space-y-1">
+                                <li>自然语言需求解析</li>
+                                <li>提取关键实体与目标</li>
+                                <li>映射到API生态系统领域</li>
+                                <li>生成结构化需求表示</li>
+                            </ul>
+                        </div>
+
+                        <div class="mb-4">
+                            <p class="font-medium mb-2">思维链可视化:</p>
+                            <div class="bg-white rounded-lg p-4 border border-gray-200">
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-line"></div>
+                                    <div>
+                                        <h4 class="font-medium">需求解析</h4>
+                                        <p class="text-sm text-gray-600">识别核心目标：政策突变模拟与协作网络分析</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-line"></div>
+                                    <div>
+                                        <h4 class="font-medium">领域映射</h4>
+                                        <p class="text-sm text-gray-600">关联API市场政策参数：佣金率、故障率、需求波动</p>
+                                    </div>
+                                </div>
+
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div>
+                                        <h4 class="font-medium">参数提取</h4>
+                                        <p class="text-sm text-gray-600">时间范围：2025年第三季度，情景类型：政策突变</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="metric-card">
+                                <p class="text-xs text-gray-500">处理时间</p>
+                                <p class="text-lg font-semibold">5-8秒</p>
+                            </div>
+                            <div class="metric-card">
+                                <p class="text-xs text-gray-500">输出格式</p>
+                                <p class="text-lg font-semibold">JSON结构化需求</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="md:w-2/3 step-details hidden" id="step-2-details">
+                        <h3 class="text-lg font-semibold mb-4">步骤 2: 规划智能体处理</h3>
+
+                        <!-- 此处为步骤2详情，与步骤1类似结构 -->
+                        <p>规划智能体基于用户需求，从ProgrammableWeb和RapidAPI数据集中提取特征，生成实验规则和参数范围...</p>
+                    </div>
+
+                    <div class="md:w-2/3 step-details hidden" id="step-3-details">
+                        <h3 class="text-lg font-semibold mb-4">步骤 3: 环境智能体处理</h3>
+
+                        <!-- 此处为步骤3详情 -->
+                        <p>环境智能体使用对抗语义建模技术，基于历史数据分布生成符合长尾分布的极端情景参数...</p>
+                    </div>
+
+                    <div class="md:w-2/3 step-details hidden" id="step-4-details">
+                        <h3 class="text-lg font-semibold mb-4">步骤 4: 社会关系智能体处理</h3>
+
+                        <!-- 此处为步骤4详情 -->
+                        <p>社会关系智能体基于API间的调用频率、共现关系和语义相似度，构建反映主体交互的协同网络...</p>
+                    </div>
+
+                    <div class="md:w-2/3 step-details hidden" id="step-5-details">
+                        <h3 class="text-lg font-semibold mb-4">步骤 5: 验证智能体处理</h3>
+
+                        <!-- 此处为步骤5详情 -->
+                        <p>验证智能体从逻辑一致性、数据吻合度和语义真实性三个维度验证结果可靠性，识别大模型可能产生的幻觉...</p>
+                    </div>
+
+                    <div class="md:w-2/3 step-details hidden" id="step-6-details">
+                        <h3 class="text-lg font-semibold mb-4">步骤 6: 方案优化与反馈</h3>
+
+                        <!-- 此处为步骤6详情 -->
+                        <p>根据验证结果，系统自动调整参数并进行迭代优化，形成闭环反馈系统...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 数据可视化 -->
+        <section class="mb-16">
+            <h2 class="text-xl font-semibold mb-6 flex items-center">
+                <i class="fa fa-bar-chart text-primary mr-2"></i> 关键指标可视化
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- API类别分布 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold mb-4">API类别分布</h3>
+                    <div class="h-64">
+                        <canvas id="apiCategoryChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 极端情景参数分布 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold mb-4">极端情景参数分布</h3>
+                    <div class="h-64">
+                        <canvas id="scenarioParamChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 网络指标变化 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold mb-4">网络指标变化</h3>
+                    <div class="h-64">
+                        <canvas id="networkMetricsChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- 验证结果统计 -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold mb-4">验证结果统计</h3>
+                    <div class="h-64">
+                        <canvas id="validationChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- API生态网络可视化 -->
+        <section>
+            <h2 class="text-xl font-semibold mb-6 flex items-center">
+                <i class="fa fa-random text-primary mr-2"></i> API生态协同网络
+            </h2>
+
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-semibold">API间协作网络</h3>
+                    <div class="flex space-x-2">
+                        <button class="px-3 py-1 bg-primary/10 text-primary rounded-lg text-sm" id="toggleNetwork">
+                            <i class="fa fa-refresh mr-1"></i> 切换视图
+                        </button>
+                        <button class="px-3 py-1 bg-primary/10 text-primary rounded-lg text-sm" id="zoomIn">
+                            <i class="fa fa-search-plus mr-1"></i> 放大
+                        </button>
+                        <button class="px-3 py-1 bg-primary/10 text-primary rounded-lg text-sm" id="zoomOut">
+                            <i class="fa fa-search-minus mr-1"></i> 缩小
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg h-96 relative overflow-hidden" id="networkContainer">
+                    <!-- 网络可视化将通过JS渲染在这里 -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center">
+                            <div class="w-16 h-16 border-4 border-primary/30 border-t-primary rounded-full animate-spin mx-auto mb-4"></div>
+                            <p class="text-gray-500">加载网络数据中...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 grid grid-cols-4 gap-4">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full bg-blue-500 mr-2"></div>
+                        <span class="text-sm">Payment API</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                        <span class="text-sm">Shipping API</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full bg-orange-500 mr-2"></div>
+                        <span class="text-sm">E-commerce API</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 rounded-full bg-purple-500 mr-2"></div>
+                        <span class="text-sm">Cloud API</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // 初始化图表
+        document.addEventListener('DOMContentLoaded', function() {
+            // API类别分布图表
+            const apiCategoryCtx = document.getElementById('apiCategoryChart').getContext('2d');
+            new Chart(apiCategoryCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Payment', 'Shipping', 'E-commerce', 'Cloud', 'Location', 'Social', 'Finance'],
+                    datasets: [{
+                        label: 'API数量',
+                        data: [850, 620, 1200, 950, 780, 520, 480],
+                        backgroundColor: [
+                            'rgba(22, 93, 255, 0.7)',
+                            'rgba(54, 211, 153, 0.7)',
+                            'rgba(255, 171, 0, 0.7)',
+                            'rgba(248, 114, 114, 0.7)',
+                            'rgba(139, 92, 246, 0.7)',
+                            'rgba(249, 115, 22, 0.7)',
+                            'rgba(16, 185, 129, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(22, 93, 255, 1)',
+                            'rgba(54, 211, 153, 1)',
+                            'rgba(255, 171, 0, 1)',
+                            'rgba(248, 114, 114, 1)',
+                            'rgba(139, 92, 246, 1)',
+                            'rgba(249, 115, 22, 1)',
+                            'rgba(16, 185, 129, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            // 极端情景参数分布图表
+            const scenarioParamCtx = document.getElementById('scenarioParamChart').getContext('2d');
+            new Chart(scenarioParamCtx, {
+                type: 'radar',
+                data: {
+                    labels: ['佣金率', '需求下降', 'API故障率', '响应时间增加', '连接中断率'],
+                    datasets: [
+                        {
+                            label: '历史平均值',
+                            data: [0.08, 0.15, 0.06, 0.2, 0.05],
+                            backgroundColor: 'rgba(22, 93, 255, 0.2)',
+                            borderColor: 'rgba(22, 93, 255, 0.8)',
+                            pointBackgroundColor: 'rgba(22, 93, 255, 1)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgba(22, 93, 255, 1)'
+                        },
+                        {
+                            label: '极端情景',
+                            data: [0.28, 0.45, 0.18, 0.7, 0.25],
+                            backgroundColor: 'rgba(248, 114, 114, 0.2)',
+                            borderColor: 'rgba(248, 114, 114, 0.8)',
+                            pointBackgroundColor: 'rgba(248, 114, 114, 1)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgba(248, 114, 114, 1)'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: {
+                                display: true
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 1
+                        }
+                    }
+                }
+            });
+
+            // 网络指标变化图表
+            const networkMetricsCtx = document.getElementById('networkMetricsChart').getContext('2d');
+            new Chart(networkMetricsCtx, {
+                type: 'line',
+                data: {
+                    labels: ['初始状态', '轻度情景', '中度情景', '重度情景'],
+                    datasets: [
+                        {
+                            label: '网络密度',
+                            data: [0.72, 0.68, 0.62, 0.55],
+                            borderColor: 'rgba(22, 93, 255, 1)',
+                            backgroundColor: 'rgba(22, 93, 255, 0.1)',
+                            tension: 0.3
+                        },
+                        {
+                            label: '平均聚类系数',
+                            data: [0.81, 0.78, 0.72, 0.65],
+                            borderColor: 'rgba(54, 211, 153, 1)',
+                            backgroundColor: 'rgba(54, 211, 153, 0.1)',
+                            tension: 0.3
+                        },
+                        {
+                            label: '平均路径长度',
+                            data: [1.8, 2.1, 2.5, 3.2],
+                            borderColor: 'rgba(255, 171, 0, 1)',
+                            backgroundColor: 'rgba(255, 171, 0, 0.1)',
+                            tension: 0.3
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: false
+                        }
+                    }
+                }
+            });
+
+            // 验证结果统计图表
+            const validationCtx = document.getElementById('validationChart').getContext('2d');
+            new Chart(validationCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['逻辑一致性', '数据吻合度', '语义真实性'],
+                    datasets: [{
+                        data: [92, 85, 88],
+                        backgroundColor: [
+                            'rgba(22, 93, 255, 0.8)',
+                            'rgba(54, 211, 153, 0.8)',
+                            'rgba(255, 171, 0, 0.8)'
+                        ],
+                        borderColor: [
+                            'rgba(22, 93, 255, 1)',
+                            'rgba(54, 211, 153, 1)',
+                            'rgba(255, 171, 0, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // 步骤按钮交互
+            const stepBtns = document.querySelectorAll('.step-btn');
+            stepBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 更新按钮样式
+                    stepBtns.forEach(b => {
+                        b.classList.remove('bg-primary/10', 'text-primary');
+                        b.classList.add('bg-gray-100', 'text-gray-700');
+                        b.querySelector('div > div:first-child').classList.remove('bg-primary');
+                        b.querySelector('div > div:first-child').classList.add('bg-gray-300');
+                    });
+
+                    this.classList.remove('bg-gray-100', 'text-gray-700');
+                    this.classList.add('bg-primary/10', 'text-primary');
+                    this.querySelector('div > div:first-child').classList.remove('bg-gray-300');
+                    this.querySelector('div > div:first-child').classList.add('bg-primary');
+
+                    // 显示对应步骤详情
+                    const step = this.dataset.step;
+                    document.querySelectorAll('.step-details').forEach(detail => {
+                        detail.classList.add('hidden');
+                    });
+                    document.getElementById(`step-${step}-details`).classList.remove('hidden');
+                });
+            });
+
+            // 模拟网络可视化
+            setTimeout(() => {
+                const networkContainer = document.getElementById('networkContainer');
+                networkContainer.innerHTML = `
+                    <svg viewBox="0 0 800 400" class="w-full h-full">
+                        <!-- 背景网格 -->
+                        <pattern id="smallGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#eee" stroke-width="0.5"/>
+                        </pattern>
+                        <rect width="100%" height="100%" fill="url(#smallGrid)"/>
+
+                        <!-- 节点和连线 -->
+                        <g id="nodes">
+                            <!-- Payment API节点 -->
+                            <circle cx="200" cy="100" r="15" fill="#3B82F6" stroke="#1E40AF" stroke-width="2" class="cursor-pointer" />
+                            <text x="220" y="105" fill="#1E40AF" font-size="12">Payment API</text>
+
+                            <!-- Shipping API节点 -->
+                            <circle cx="350" cy="150" r="15" fill="#10B981" stroke="#047857" stroke-width="2" class="cursor-pointer" />
+                            <text x="370" y="155" fill="#047857" font-size="12">Shipping API</text>
+
+                            <!-- E-commerce API节点 -->
+                            <circle cx="450" cy="100" r="20" fill="#F59E0B" stroke="#D97706" stroke-width="2" class="cursor-pointer" />
+                            <text x="475" y="105" fill="#D97706" font-size="12">E-commerce API</text>
+
+                            <!-- Cloud API节点 -->
+                            <circle cx="300" cy="250" r="15" fill="#8B5CF6" stroke="#5B21B6" stroke-width="2" class="cursor-pointer" />
+                            <text x="320" y="255" fill="#5B21B6" font-size="12">Cloud API</text>
+
+                            <!-- Location API节点 -->
+                            <circle cx="500" cy="200" r="15" fill="#EC4899" stroke="#9D174D" stroke-width="2" class="cursor-pointer" />
+                            <text x="520" y="205" fill="#9D174D" font-size="12">Location API</text>
+
+                            <!-- Enterprise节点 -->
+                            <circle cx="380" cy="320" r="25" fill="#165DFF" stroke="#0A2463" stroke-width="2" class="cursor-pointer" />
+                            <text x="410" y="325" fill="#0A2463" font-size="12">Enterprise</text>
+                        </g>
+
+                        <!-- 连线 -->
+                        <g id="edges">
+                            <line x1="200" y1="100" x2="350" y2="150" stroke="#9CA3AF" stroke-width="2" stroke-dasharray="5,5" />
+                            <line x1="350" y1="150" x2="450" y2="100" stroke="#9CA3AF" stroke-width="2" />
+                            <line x1="450" y1="100" x2="500" y2="200" stroke="#9CA3AF" stroke-width="2" />
+                            <line x1="350" y1="150" x2="300" y2="250" stroke="#9CA3AF" stroke-width="2" stroke-dasharray="5,5" />
+                            <line x1="300" y1="250" x2="380" y2="320" stroke="#9CA3AF" stroke-width="3" />
+                            <line x1="450" y1="100" x2="380" y2="320" stroke="#9CA3AF" stroke-width="3" />
+                            <line x1="500" y1="200" x2="380" y2="320" stroke="#9CA3AF" stroke-width="2" />
+                        </g>
+                    </svg>
+                `;
+            }, 2000);
+
+            // 网络视图交互
+            document.getElementById('toggleNetwork').addEventListener('click', function() {
+                const networkContainer = document.getElementById('networkContainer');
+                if (networkContainer.innerHTML.includes('stroke-dasharray')) {
+                    networkContainer.innerHTML = networkContainer.innerHTML.replace(/stroke-dasharray="5,5"/g, '');
+                } else {
+                    const svg = networkContainer.querySelector('svg');
+                    const edges = svg.querySelectorAll('#edges line');
+                    edges.forEach((edge, index) => {
+                        if (index % 2 === 0) {
+                            edge.setAttribute('stroke-dasharray', '5,5');
+                        }
+                    });
+                }
+            });
+
+            // 缩放功能
+            document.getElementById('zoomIn').addEventListener('click', function() {
+                const svg = document.querySelector('#networkContainer svg');
+                const viewBox = svg.getAttribute('viewBox').split(' ').map(Number);
+                viewBox[2] *= 0.9;
+                viewBox[3] *= 0.9;
+                svg.setAttribute('viewBox', viewBox.join(' '));
+            });
+
+            document.getElementById('zoomOut').addEventListener('click', function() {
+                const svg = document.querySelector('#networkContainer svg');
+                const viewBox = svg.getAttribute('viewBox').split(' ').map(Number);
+                viewBox[2] *= 1.1;
+                viewBox[3] *= 1.1;
+                svg.setAttribute('viewBox', viewBox.join(' '));
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+2025-07-06 14:01:37 - api_ecosystem - WARNING - 未提供LLM配置文件，使用默认配置
+2025-07-06 14:01:37 - api_ecosystem - WARNING - 未提供API密钥，请设置环境变量OPENAI_API_KEY或在初始化时提供
+2025-07-06 14:01:37 - api_ecosystem - WARNING - 未提供API密钥，使用模拟模式
+2025-07-06 14:01:37 - api_ecosystem - INFO - LLM接口初始化完成，模型: gpt-3.5-turbo，模拟模式: True
+2025-07-06 14:01:37 - api_ecosystem - INFO - 开始测试模式
+2025-07-06 14:01:37 - api_ecosystem - INFO - 开始测试环境Agent
+2025-07-06 14:01:37 - api_ecosystem - INFO - [环境Agent] 环境Agent初始化完成
+2025-07-06 14:01:37 - api_ecosystem - INFO - [环境Agent] 开始生成极端情景
+2025-07-06 14:01:37 - api_ecosystem - INFO - 使用模拟响应进行测试
+2025-07-06 14:01:37 - api_ecosystem - INFO - [环境Agent] 开始行动，计算环境分布的上下限边界

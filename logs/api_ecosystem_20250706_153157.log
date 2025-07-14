@@ -1,0 +1,12 @@
+2025-07-06 15:31:57 - api_ecosystem - INFO - 启动可视化模式
+2025-07-06 15:31:57 - api_ecosystem - INFO - 生成历史数据: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\data\processed\historical_data.json
+2025-07-06 15:31:57 - api_ecosystem - INFO - 绘制环境边界图表: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\visualizations\environment_boundaries.png
+2025-07-06 15:31:58 - api_ecosystem - INFO - 图表已生成: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\visualizations\environment_boundaries.png
+2025-07-06 15:31:58 - api_ecosystem - INFO - 生成多个模拟情景并绘制对比图表
+2025-07-06 15:31:58 - api_ecosystem - INFO - 绘制多情景对比图表: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\visualizations\multi_scenarios.png
+2025-07-06 15:32:00 - api_ecosystem - INFO - 多情景对比图表已生成: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\visualizations\multi_scenarios.png
+2025-07-06 15:32:00 - api_ecosystem - INFO - 绘制情景需求变化对比图表: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\visualizations\scenario_comparison.png
+2025-07-06 15:32:01 - api_ecosystem - INFO - 情景需求变化对比图表已生成: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\visualizations\scenario_comparison.png
+2025-07-06 15:32:01 - api_ecosystem - INFO - 尝试打开图表文件...
+2025-07-06 15:32:02 - api_ecosystem - INFO - 图表文件已打开
+2025-07-06 15:32:02 - api_ecosystem - INFO - 可视化模式完成

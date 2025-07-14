@@ -1,0 +1,48 @@
+2025-07-06 15:11:24 - api_ecosystem - INFO - 启动运行模式
+2025-07-06 15:11:24 - api_ecosystem - INFO - 使用配置文件: ../config3.json
+2025-07-06 15:11:24 - api_ecosystem - INFO - 从配置文件 ../config3.json 加载配置
+2025-07-06 15:11:24 - api_ecosystem - INFO - 从配置文件加载了API密钥和LLM配置，使用模型: qwen2.5-72b-instruct
+2025-07-06 15:11:24 - api_ecosystem - INFO - 使用自定义API基础URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+2025-07-06 15:11:25 - api_ecosystem - INFO - OpenAI客户端初始化成功
+2025-07-06 15:11:25 - api_ecosystem - INFO - LLM接口初始化完成，模型: qwen2.5-72b-instruct，模拟模式: False
+2025-07-06 15:11:25 - api_ecosystem - INFO - LLM接口初始化成功: LLMInterface(model=qwen2.5-72b-instruct, temperature=0.7, mock_mode=False)
+2025-07-06 15:11:25 - api_ecosystem - INFO - 步骤1: 生成极端情景
+2025-07-06 15:11:25 - api_ecosystem - INFO - [环境Agent] 环境Agent初始化完成
+2025-07-06 15:11:25 - api_ecosystem - INFO - [环境Agent] 开始生成极端情景
+2025-07-06 15:11:25 - api_ecosystem - INFO - [环境Agent] 开始思考，生成极端情景
+2025-07-06 15:11:39 - api_ecosystem - INFO - [环境Agent] 生成极端情景: 未命名情景
+2025-07-06 15:11:39 - api_ecosystem - INFO - [环境Agent] 开始行动，计算环境分布的上下限边界
+2025-07-06 15:11:39 - api_ecosystem - INFO - 生成极端情景成功: 未命名情景
+2025-07-06 15:11:39 - api_ecosystem - INFO - 步骤2: 构建协同网络
+2025-07-06 15:11:39 - api_ecosystem - INFO - [社会Agent] 社会Agent初始化完成
+2025-07-06 15:11:39 - api_ecosystem - INFO - [社会Agent] API数据加载完成，包含22649个API
+2025-07-06 15:11:43 - api_ecosystem - INFO - [社会Agent] 关系数据加载完成，包含0个调用关系和3377691个相似性关系
+2025-07-06 15:11:43 - api_ecosystem - INFO - [社会Agent] API数量(22649)超过最大节点数(5000)，进行随机采样
+2025-07-06 15:11:43 - api_ecosystem - INFO - [社会Agent] 相似性关系数量(3377691)超过剩余边数限制(50000)，根据权重排序
+2025-07-06 15:11:44 - api_ecosystem - INFO - [社会Agent] 成功构建协作网络，包含5000个节点和2425条边
+2025-07-06 15:11:44 - api_ecosystem - INFO - [社会Agent] 开始使用Louvain算法进行社区检测
+2025-07-06 15:11:45 - api_ecosystem - INFO - [社会Agent] 成功检测到10个社区
+2025-07-06 15:11:45 - api_ecosystem - INFO - [社会Agent] 开始识别关键节点
+2025-07-06 15:11:45 - api_ecosystem - INFO - [社会Agent] 计算度中心性
+2025-07-06 15:11:45 - api_ecosystem - INFO - [社会Agent] 计算介数中心性（使用近似算法）
+2025-07-06 15:11:50 - api_ecosystem - INFO - [社会Agent] 计算接近中心性
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 计算特征向量中心性
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 计算综合评分
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 成功识别10个关键节点
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 开始分析跨社区连接
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 成功分析1个跨社区连接
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 开始提取骨干网络
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 成功提取骨干网络，包含5000个节点和71条边
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 开始保存分析结果到目录: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\full_run
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 成功保存分析结果到目录: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\full_run
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 开始可视化网络
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 网络节点数(5000)过多，只可视化关键节点和它们的邻居
+2025-07-06 15:11:51 - api_ecosystem - INFO - [社会Agent] 成功可视化网络并保存到: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\full_run\network_visualization.png
+2025-07-06 15:11:51 - api_ecosystem - INFO - 构建协同网络成功
+2025-07-06 15:11:51 - api_ecosystem - INFO - 步骤3: 生成约束条件和实验规则
+2025-07-06 15:11:51 - api_ecosystem - INFO - [规划Agent] 规划Agent初始化完成
+2025-07-06 15:11:51 - api_ecosystem - INFO - [规划Agent] 环境边界设置完成
+2025-07-06 15:11:51 - api_ecosystem - INFO - [规划Agent] 社会关系网络设置完成
+2025-07-06 15:11:51 - api_ecosystem - INFO - 生成约束条件
+2025-07-06 15:11:51 - api_ecosystem - INFO - [规划Agent] 开始思考，执行规划任务
+2025-07-06 15:11:51 - api_ecosystem - INFO - [规划Agent] 开始生成约束条件

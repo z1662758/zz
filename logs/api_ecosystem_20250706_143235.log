@@ -1,0 +1,20 @@
+2025-07-06 14:32:35 - api_ecosystem - INFO - 从配置文件加载LLM接口: ../config3.json
+2025-07-06 14:32:35 - api_ecosystem - INFO - 从配置文件 ../config3.json 加载配置
+2025-07-06 14:32:35 - api_ecosystem - INFO - 从配置文件加载了API密钥和LLM配置，使用模型: qwen2.5-72b-instruct
+2025-07-06 14:32:35 - api_ecosystem - INFO - 使用自定义API基础URL: https://dashscope.aliyuncs.com/compatible-mode/v1
+2025-07-06 14:32:35 - api_ecosystem - INFO - OpenAI客户端初始化成功
+2025-07-06 14:32:35 - api_ecosystem - INFO - LLM接口初始化完成，模型: qwen2.5-72b-instruct，模拟模式: False
+2025-07-06 14:32:35 - api_ecosystem - INFO - 开始测试环境Agent
+2025-07-06 14:32:35 - api_ecosystem - INFO - [环境Agent] 环境Agent初始化完成
+2025-07-06 14:32:35 - api_ecosystem - INFO - [环境Agent] 开始生成极端情景
+2025-07-06 14:32:35 - api_ecosystem - INFO - [环境Agent] 开始思考，生成极端情景
+2025-07-06 14:32:52 - api_ecosystem - INFO - [环境Agent] 生成极端情景: 未命名情景
+2025-07-06 14:32:52 - api_ecosystem - INFO - [环境Agent] 开始行动，计算环境分布的上下限边界
+2025-07-06 14:32:52 - api_ecosystem - INFO - 生成的极端情景: 未命名情景
+2025-07-06 14:32:52 - api_ecosystem - INFO - 需求变化: {'基础设施类': 35.71904056833502, '生活服务类': -27.691903216660805, '企业管理类': 7.655637555591817, '社交娱乐类': 19.091739215205124}
+2025-07-06 14:32:52 - api_ecosystem - INFO - 概率: 0.0
+2025-07-06 14:32:52 - api_ecosystem - INFO - 持续时间: 0个月
+2025-07-06 14:32:52 - api_ecosystem - INFO - 长期影响: 
+2025-07-06 14:32:52 - api_ecosystem - ERROR - 极端情景可视化失败: 'Axes' object has no attribute 'set_thetagrids'
+2025-07-06 14:32:52 - api_ecosystem - INFO - 已生成简单可视化: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\test_env_agent\visualize\simple_visualization.png
+2025-07-06 14:32:52 - api_ecosystem - INFO - 测试结果已保存到: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\test_env_agent

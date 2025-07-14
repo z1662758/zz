@@ -1,0 +1,26 @@
+2025-07-05 21:35:58 - api_ecosystem - INFO - 启动社会Agent测试模式
+2025-07-05 21:35:58 - api_ecosystem - WARNING - 未提供API密钥，请设置环境变量OPENAI_API_KEY或在初始化时提供
+2025-07-05 21:35:58 - api_ecosystem - WARNING - 未提供API密钥，使用模拟模式
+2025-07-05 21:35:58 - api_ecosystem - INFO - LLM接口初始化完成，模型: gpt-3.5-turbo，模拟模式: True
+2025-07-05 21:35:58 - api_ecosystem - INFO - LLM接口初始化成功: LLMInterface(model=gpt-3.5-turbo, temperature=0.7, mock_mode=True)
+2025-07-05 21:35:58 - api_ecosystem - INFO - [社会Agent] 社会Agent初始化完成
+2025-07-05 21:35:58 - api_ecosystem - INFO - 社会Agent创建成功: 社会Agent - 负责构建API服务市场协同网络，反映主体间交互关系
+2025-07-05 21:35:58 - api_ecosystem - INFO - [社会Agent] 开始构建协同网络
+2025-07-05 21:35:58 - api_ecosystem - INFO - [社会Agent] 开始思考，构建协同网络
+2025-07-05 21:35:58 - api_ecosystem - INFO - 使用模拟LLM响应
+2025-07-05 21:35:58 - api_ecosystem - INFO - 使用模拟LLM响应
+2025-07-05 21:35:58 - api_ecosystem - INFO - [社会Agent] 构建协同网络完成，识别了5个社区，6个关键节点
+2025-07-05 21:35:58 - api_ecosystem - INFO - [社会Agent] 开始行动，提取网络骨干结构
+2025-07-05 21:35:58 - api_ecosystem - INFO - 构建协同网络成功:
+2025-07-05 21:35:58 - api_ecosystem - INFO - 社区数量: 5
+2025-07-05 21:35:58 - api_ecosystem - INFO - 关键节点数量: 6
+2025-07-05 21:35:58 - api_ecosystem - INFO - 跨社区连接数量: 4
+2025-07-05 21:35:58 - api_ecosystem - INFO - 关系阈值: 0.3
+2025-07-05 21:35:58 - api_ecosystem - INFO - 骨干网络节点数: 6
+2025-07-05 21:35:58 - api_ecosystem - INFO - 骨干网络边数: 4
+2025-07-05 21:35:58 - api_ecosystem - INFO - 示例社区 社区1（基础设施服务）: 包含云存储API、数据库API、服务器管理API等，这些API提供基础的技术设施服务。
+2025-07-05 21:35:58 - api_ecosystem - INFO - 包含API数量: 0
+2025-07-05 21:35:58 - api_ecosystem - INFO - 示例关键节点: 云存储API
+2025-07-05 21:35:58 - api_ecosystem - INFO - 中心性: 0.85
+2025-07-05 21:35:58 - api_ecosystem - INFO - 所属社区: 社区1
+2025-07-05 21:35:58 - api_ecosystem - INFO - 社会Agent测试模式完成

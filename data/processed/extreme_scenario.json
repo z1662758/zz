@@ -1,0 +1,13 @@
+﻿{
+  "title": "API服务生态系统极端情景",
+  "description": "这是一个基于真实数据的极端情景，用于测试可视化功能",
+  "demand_changes": {
+    "Social": 1200,
+    "Enterprise": 2500,
+    "Tools": 500,
+    "Financial": 3500
+  },
+  "probability": 0.05,
+  "duration": 12,
+  "long_term_impact": "这是一个长期影响描述"
+}

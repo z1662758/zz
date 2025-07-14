@@ -1,0 +1,10 @@
+2025-07-07 13:46:01 - api_ecosystem - INFO - 开始从SQL文件加载数据: ../programmableweb_2022(1).sql, ../programmableweb_dataset(1).sql
+2025-07-07 13:46:01 - api_ecosystem - INFO - 开始提取API数据: ../programmableweb_2022(1).sql
+2025-07-07 13:46:02 - api_ecosystem - INFO - API数据提取完成，共提取22649个API
+2025-07-07 13:46:02 - api_ecosystem - INFO - 开始提取关系数据: ../programmableweb_dataset(1).sql
+2025-07-07 13:46:02 - api_ecosystem - INFO - 开始计算API之间的相似性关系
+2025-07-07 13:46:10 - api_ecosystem - INFO - 相似性关系计算完成，共计算3377691个相似性关系
+2025-07-07 13:46:10 - api_ecosystem - INFO - 关系数据提取完成，共提取0个调用关系，3377691个相似性关系
+2025-07-07 13:46:10 - api_ecosystem - INFO - 数据加载成功，共加载22649个API和0个调用关系
+2025-07-07 13:46:10 - api_ecosystem - INFO - 开始保存处理后的数据: data/processed
+2025-07-07 13:46:34 - api_ecosystem - INFO - 处理后的数据已保存到: data/processed

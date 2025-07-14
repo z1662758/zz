@@ -1,0 +1,38 @@
+2025-07-05 21:39:40 - api_ecosystem - INFO - 启动运行模式
+2025-07-05 21:39:40 - api_ecosystem - WARNING - 未提供API密钥，请设置环境变量OPENAI_API_KEY或在初始化时提供
+2025-07-05 21:39:40 - api_ecosystem - WARNING - 未提供API密钥，使用模拟模式
+2025-07-05 21:39:40 - api_ecosystem - INFO - LLM接口初始化完成，模型: gpt-3.5-turbo，模拟模式: True
+2025-07-05 21:39:40 - api_ecosystem - INFO - LLM接口初始化成功: LLMInterface(model=gpt-3.5-turbo, temperature=0.7, mock_mode=True)
+2025-07-05 21:39:40 - api_ecosystem - INFO - 步骤1: 使用环境Agent生成极端情景
+2025-07-05 21:39:40 - api_ecosystem - INFO - [环境Agent] 环境Agent初始化完成
+2025-07-05 21:39:40 - api_ecosystem - INFO - [环境Agent] 开始生成极端情景
+2025-07-05 21:39:40 - api_ecosystem - INFO - [环境Agent] 开始思考，生成极端情景
+2025-07-05 21:39:40 - api_ecosystem - INFO - 使用模拟LLM响应
+2025-07-05 21:39:40 - api_ecosystem - INFO - 使用模拟LLM响应
+2025-07-05 21:39:40 - api_ecosystem - INFO - [环境Agent] 生成极端情景: 全球数据隐私监管大爆发
+2025-07-05 21:39:40 - api_ecosystem - INFO - [环境Agent] 开始行动，计算环境分布的上下限边界
+2025-07-05 21:39:40 - api_ecosystem - INFO - 生成极端情景成功: 全球数据隐私监管大爆发
+2025-07-05 21:39:40 - api_ecosystem - INFO - 需求变化: {'基础设施类': 45.0, '生活服务类': -25.0, '企业管理类': 30.0, '社交娱乐类': -40.0}
+2025-07-05 21:39:40 - api_ecosystem - INFO - 上限边界: {'基础设施类': 45.0, '生活服务类': -25.0, '企业管理类': 30.0, '社交娱乐类': -40.0}
+2025-07-05 21:39:40 - api_ecosystem - INFO - 下限边界: {'基础设施类': 45.0, '生活服务类': -25.0, '企业管理类': 30.0, '社交娱乐类': -40.0}
+2025-07-05 21:39:40 - api_ecosystem - INFO - 步骤2: 使用社会Agent构建协同网络
+2025-07-05 21:39:40 - api_ecosystem - INFO - [社会Agent] 社会Agent初始化完成
+2025-07-05 21:39:40 - api_ecosystem - INFO - [社会Agent] 开始构建协同网络
+2025-07-05 21:39:40 - api_ecosystem - INFO - [社会Agent] 开始思考，构建协同网络
+2025-07-05 21:39:40 - api_ecosystem - INFO - 使用模拟LLM响应
+2025-07-05 21:39:40 - api_ecosystem - INFO - 使用模拟LLM响应
+2025-07-05 21:39:40 - api_ecosystem - INFO - [社会Agent] 解析网络响应完成，识别了6个社区，6个关键节点，4个跨社区连接
+2025-07-05 21:39:40 - api_ecosystem - INFO - [社会Agent] 构建协同网络完成，识别了6个社区，6个关键节点
+2025-07-05 21:39:40 - api_ecosystem - INFO - [社会Agent] 开始行动，提取网络骨干结构
+2025-07-05 21:39:40 - api_ecosystem - INFO - 构建协同网络成功:
+2025-07-05 21:39:40 - api_ecosystem - INFO - 社区数量: 6
+2025-07-05 21:39:40 - api_ecosystem - INFO - 关键节点数量: 6
+2025-07-05 21:39:40 - api_ecosystem - INFO - 跨社区连接数量: 4
+2025-07-05 21:39:40 - api_ecosystem - INFO - 关系阈值: 0.3
+2025-07-05 21:39:40 - api_ecosystem - INFO - 极端情景已保存到: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\extreme_scenario.json
+2025-07-05 21:39:40 - api_ecosystem - INFO - 协同网络已保存到: E:\接单总\微信\看一下\挥剑斩情丝-看学习\api_ecosystem_simulation\output\collaborative_network.json
+2025-07-05 21:39:40 - api_ecosystem - INFO - 步骤4: 下一步计划
+2025-07-05 21:39:40 - api_ecosystem - INFO - 1. 实现规划Agent，生成系统约束条件和实验计划
+2025-07-05 21:39:40 - api_ecosystem - INFO - 2. 实现验证Agent，验证生成情景的合理性
+2025-07-05 21:39:40 - api_ecosystem - INFO - 3. 集成所有Agent，构建完整的API服务生态系统情景生成流程
+2025-07-05 21:39:40 - api_ecosystem - INFO - 运行模式完成

@@ -1,0 +1,62 @@
+[
+    {
+        "title": "API服务质量标准",
+        "description": "API服务应保证99.9%的可用性，平均响应时间不超过200ms。",
+        "category": "quality",
+        "importance": "high"
+    },
+    {
+        "title": "API安全标准",
+        "description": "所有API调用必须经过身份验证和授权，敏感数据必须加密传输。",
+        "category": "security",
+        "importance": "high"
+    },
+    {
+        "title": "API定价标准",
+        "description": "API定价应基于调用次数和数据量，并提供免费的基础套餐。",
+        "category": "business",
+        "importance": "medium"
+    },
+    {
+        "title": "API文档标准",
+        "description": "API必须提供完整的文档，包括接口描述、参数说明、返回值说明和示例代码。",
+        "category": "documentation",
+        "importance": "medium"
+    },
+    {
+        "title": "API版本管理标准",
+        "description": "API应遵循语义化版本控制，主版本变更表示不兼容的API更改，次版本变更表示向后兼容的功能性新增，修订版本变更表示向后兼容的问题修正。",
+        "category": "management",
+        "importance": "medium"
+    },
+    {
+        "title": "API限流标准",
+        "description": "API服务应实施合理的限流策略，防止滥用和保护系统稳定性。基础设施类API每分钟最多允许1000次调用，生活服务类API每分钟最多允许500次调用，企业管理类API每分钟最多允许300次调用，社交娱乐类API每分钟最多允许800次调用。",
+        "category": "operation",
+        "importance": "high"
+    },
+    {
+        "title": "API监控标准",
+        "description": "API服务应提供实时监控和告警功能，包括性能指标、错误率、调用量等关键指标。",
+        "category": "operation",
+        "importance": "medium"
+    },
+    {
+        "title": "API生态系统健康度评估标准",
+        "description": "API生态系统的健康度应通过价值熵来衡量，确保系统中的API分布均衡，不同类别的API都有合理的市场份额。",
+        "category": "ecosystem",
+        "importance": "high"
+    },
+    {
+        "title": "API协作网络标准",
+        "description": "API协作网络应保持适当的连接密度，社区内部的连接密度应该至少是跨社区连接密度的3倍，以确保社区的内聚性和系统的整体连通性。",
+        "category": "ecosystem",
+        "importance": "medium"
+    },
+    {
+        "title": "API市场波动应对标准",
+        "description": "在市场需求出现极端波动时，API提供商应当采取相应措施，确保服务质量不受影响。当某类API需求下降超过30%时，应考虑调整资源分配；当需求上升超过50%时，应考虑扩容。",
+        "category": "business",
+        "importance": "high"
+    }
+]
